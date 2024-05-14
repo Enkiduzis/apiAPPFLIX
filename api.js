@@ -5,17 +5,17 @@ const path = require('path');
 
 const app = express();
 
-// Diretório onde os arquivos estão armazenados
-// Alterar para o diretório onde os arquivos estão armazenados efetivamente
-// Exemplo de diretório: 'C:/xampp/htdocs/api-test/file'
+// DiretÃ³rio onde os arquivos estÃ£o armazenados
+// Alterar para o diretÃ³rio onde os arquivos estÃ£o armazenados efetivamente
+// Exemplo de diretÃ³rio: 'C:/xampp/htdocs/api-test/file'
 const fileDirectory = 'C:/xampp/htdocs/api-test/file';
 
 // Chave de criptografia (deve ter 32 caracteres para AES-256)
-// Alterar para uma chave segura e não compartilhar
+// Alterar para uma chave segura e nï¿½o compartilhar
 // Exemplo de chave AES-256 de 32 caracteres: '01234567890123456789012345678901'
 const encryptionKey = 'your-32-character-encryption-key';
 
-// Função para gerar um token de acesso com expiração de 5 minutos
+// Funï¿½ï¿½o para gerar um token de acesso com expiraï¿½ï¿½o de 5 minutos
 function generateAccessToken(expirationMinutes = 5) {
   const payload = {
     exp: Math.floor(Date.now() / 1000) + (expirationMinutes * 60),
@@ -25,7 +25,7 @@ function generateAccessToken(expirationMinutes = 5) {
 
 // Rota para obter o arquivo criptografado com token de acesso
 // Exemplo de URL: http://localhost:3000/file/arquivo.txt
-// Irá retornar a URL para download do arquivo criptografado
+// Irï¿½ retornar a URL para download do arquivo criptografado
 // Exemplo de URL de download: http://localhost:3000/encrypted/LWvz1KPU7p/6pX8gErA5Xw==?token=eyJleHAiOjE3MTU2NDU2NTF9&iv=g9gMal_ayBj4R5uXiWyKIQ&filename=your-file.txt
 app.get('/file/:filename', (req, res) => {
   const { filename } = req.params;
@@ -34,7 +34,7 @@ app.get('/file/:filename', (req, res) => {
 
   try {
     const fileData = fs.readFileSync(filePath);
-    const iv = crypto.randomBytes(16); // Vetor de inicialização aleatório
+    const iv = crypto.randomBytes(16); // Vetor de inicializaï¿½ï¿½o aleatï¿½rio
     const cipher = crypto.createCipheriv('aes-256-cbc', encryptionKey, iv);
     let encrypted = cipher.update(fileData);
     encrypted = Buffer.concat([encrypted, cipher.final()]);
@@ -50,7 +50,7 @@ app.get('/file/:filename', (req, res) => {
 });
 
 // Rota para validar o token de acesso e descriptografar o arquivo
-// Irá retornar o arquivo para download com o nome original
+// Irï¿½ retornar o arquivo para download com o nome original
 // Exemplo de URL: http://localhost:3000/encrypted/LWvz1KPU7p/6pX8gErA5Xw==?token=eyJleHAiOjE3MTU2NDU2NTF9&iv=g9gMal_ayBj4R5uXiWyKIQ&filename=your-file.txt
 app.get('/encrypted/:encryptedFile', (req, res) => {
   const { encryptedFile } = req.params;
@@ -79,5 +79,5 @@ app.get('/encrypted/:encryptedFile', (req, res) => {
 app.listen(3000, () => {
   console.log('Servidor rodando em http://localhost:3000');
   console.log('Pressione Ctrl+C para encerrar');
-  console.log('Node em Execução');
+  console.log('Node em ExecuÃ§Ã£o');
 });
