@@ -7,6 +7,7 @@ const app = express();
 
 // Diretório onde os arquivos estão armazenados
 // Alterar para o diretório onde os arquivos estão armazenados efetivamente
+// Exemplo de diretório: 'C:/xampp/htdocs/api-test/file'
 const fileDirectory = 'C:/xampp/htdocs/api-test/file';
 
 // Chave de criptografia (deve ter 32 caracteres para AES-256)
