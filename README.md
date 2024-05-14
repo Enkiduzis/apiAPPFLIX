@@ -147,21 +147,21 @@ O token de acesso expirará após 5 minutos. Se você tentar acessar a URL após
 ## API em PHP
 O aplicativo Android precisa fazer duas solicitações para alcançar esse resultado: uma solicitação GET para obter o token de autenticação e uma solicitação POST para buscar e exibir a página HTML. Aqui está um fluxograma simplificado desse processo:
 
-###Aplicativo Android (Cliente):
+### Aplicativo Android (Cliente):
 
-####O usuário clica em um botão no aplicativo Android para abrir o arquivo HTML.
-*Solicitação GET (Aplicativo Android para a API):
+#### O usuário clica em um botão no aplicativo Android para abrir o arquivo HTML.
+* Solicitação GET (Aplicativo Android para a API):
 
-**O aplicativo Android faz uma solicitação GET para a sua API para obter o token de autenticação.
-***A API gera um token de autenticação e o armazena no cache do computador (por exemplo, em um cookie).
-***A API retorna o token de autenticação para o aplicativo Android.
+* O aplicativo Android faz uma solicitação GET para a sua API para obter o token de autenticação.
+* A API gera um token de autenticação e o armazena no cache do computador (por exemplo, em um cookie).
+* A API retorna o token de autenticação para o aplicativo Android.
 
-*Solicitação POST (Aplicativo Android para a API):
-**O aplicativo Android faz uma solicitação POST para a sua API para buscar a página HTML.
-**O aplicativo Android envia a URL do arquivo HTML junto com o token de autenticação obtido na etapa anterior.
-***A API valida o token de autenticação.
-***Se o token for válido, a API busca a página HTML e a retorna como resposta.
-****O aplicativo Android exibe a página HTML para o usuário, sem revelar o URL verdadeiro.
+* Solicitação POST (Aplicativo Android para a API):
+* O aplicativo Android faz uma solicitação POST para a sua API para buscar a página HTML.
+* O aplicativo Android envia a URL do arquivo HTML junto com o token de autenticação obtido na etapa anterior.
+* A API valida o token de autenticação.
+* Se o token for válido, a API busca a página HTML e a retorna como resposta.
+* O aplicativo Android exibe a página HTML para o usuário, sem revelar o URL verdadeiro.
 
 ### Conclusão
 
