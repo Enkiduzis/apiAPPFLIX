@@ -151,12 +151,15 @@ O aplicativo Android precisa fazer duas solicitações para alcançar esse resul
 
 #### O usuário clica em um botão no aplicativo Android para abrir o arquivo HTML.
 * Solicitação GET (Aplicativo Android para a API):
-
+  ![image](https://github.com/Enkiduzis/apiAPPFLIX/assets/77994612/d2abdcd3-9f7c-4323-aa37-87a27a35aee3)
 * O aplicativo Android faz uma solicitação GET para a sua API para obter o token de autenticação.
 * A API gera um token de autenticação e o armazena no cache do computador (por exemplo, em um cookie).
 * A API retorna o token de autenticação para o aplicativo Android.
 
 * Solicitação POST (Aplicativo Android para a API):
+
+  ![image](https://github.com/Enkiduzis/apiAPPFLIX/assets/77994612/14daf2b8-b794-4136-b7c9-749ce701c68c)
+
 * O aplicativo Android faz uma solicitação POST para a sua API para buscar a página HTML.
 * O aplicativo Android envia a URL do arquivo HTML junto com o token de autenticação obtido na etapa anterior.
 * A API valida o token de autenticação.
