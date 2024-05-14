@@ -166,6 +166,11 @@ O aplicativo Android precisa fazer duas solicitações para alcançar esse resul
 * Se o token for válido, a API busca a página HTML e a retorna como resposta.
 * O aplicativo Android exibe a página HTML para o usuário, sem revelar o URL verdadeiro.
 
+Com isso satisfazemos os 3 requisitos do projeto:
+1. O usuário não terá acesso ao URL principal do serviço (com domínio oculto pela api);
+2. O usuário terá um token de autenticação com validade a definir pelo administrador;
+3. O retorno de dados é um .html que é aberto na web.
+
 ### Conclusão
 
 Esse eé serviço que usa o Node.js para criptografa arquivos e gera tokens de acesso temporários para download seguro. Essa abordagem garante que apenas usuários autorizados possam acessar os arquivos dentro de um período de tempo limitado, aumentando a segurança e a privacidade do armazenamento de arquivos.
